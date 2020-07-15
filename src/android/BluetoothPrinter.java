@@ -601,9 +601,7 @@ public class BluetoothPrinter extends CordovaPlugin {
 
             bitmap = resizeImage(bitmap, 48 * 8, mHeight);
 
-            byte[]  bt =getBitmapData(bitmap);
-
-            bitmap.recycle();
+            byte[] bt = decodeBitmapBase64(bitmap);
             
             // not work
             Log.d(LOG_TAG, "SWITCH ALIGN BASE64 -> " + align);
