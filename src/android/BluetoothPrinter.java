@@ -434,7 +434,7 @@ public class BluetoothPrinter extends CordovaPlugin {
 
     boolean printText(CallbackContext callbackContext, String msg) throws IOException {
         try {
-            // CANCEL CHINESE CHARACTER
+             CANCEL CHINESE CHARACTER
             mmOutputStream.write(0x1C);
             mmOutputStream.write(0x2E);
             //
@@ -443,8 +443,73 @@ public class BluetoothPrinter extends CordovaPlugin {
             mmOutputStream.write(0x10);
             // -------------------------
             // Select character code table (ESC t n) - n = 16(0x10) for WPC1252
-            //mmOutputStream.write(msg.getBytes("UTF-8"));
-            mmOutputStream.write(msg.getBytes("iso-8859-15"));
+            //mmOutputStream.write(msg.getBytes("iso-8859-1"));
+            mmOutputStream.write("äüöÄÜÖ€€€".getBytes("iso-8859-1"));
+            
+            mmOutputStream.write(0x1B);
+            mmOutputStream.write(0x74);
+            mmOutputStream.write(0x0);
+            mmOutputStream.write("äüöÄÜÖ€€€".getBytes("iso-8859-1"));
+            // -------------------------
+            mmOutputStream.write(0x1B);
+            mmOutputStream.write(0x74);
+            mmOutputStream.write(0x1);
+            mmOutputStream.write("äüöÄÜÖ€€€".getBytes("iso-8859-1"));
+            // -------------------------
+            mmOutputStream.write(0x1B);
+            mmOutputStream.write(0x74);
+            mmOutputStream.write(0x2);
+            mmOutputStream.write("äüöÄÜÖ€€€".getBytes("iso-8859-1"));
+            mmOutputStream.write(0x1B);
+            mmOutputStream.write(0x74);
+            mmOutputStream.write(0x3);
+            mmOutputStream.write("äüöÄÜÖ€€€".getBytes("iso-8859-1"));
+            mmOutputStream.write(0x1B);
+            mmOutputStream.write(0x74);
+            mmOutputStream.write(0x4);
+            mmOutputStream.write("äüöÄÜÖ€€€".getBytes("iso-8859-1"));
+            mmOutputStream.write(0x1B);
+            mmOutputStream.write(0x74);
+            mmOutputStream.write(0x5);
+            mmOutputStream.write("äüöÄÜÖ€€€".getBytes("iso-8859-1"));
+            mmOutputStream.write(0x1B);
+            mmOutputStream.write(0x74);
+            mmOutputStream.write(0x15);
+            mmOutputStream.write("äüöÄÜÖ€€€".getBytes("iso-8859-1"));
+            mmOutputStream.write(0x1B);
+            mmOutputStream.write(0x74);
+            mmOutputStream.write(0x16);
+            mmOutputStream.write("äüöÄÜÖ€€€".getBytes("iso-8859-1"));
+            mmOutputStream.write(0x1B);
+            mmOutputStream.write(0x74);
+            mmOutputStream.write(0x17);
+            mmOutputStream.write("äüöÄÜÖ€€€".getBytes("iso-8859-1"));
+            mmOutputStream.write(0x1B);
+            mmOutputStream.write(0x74);
+            mmOutputStream.write(0x18);
+            mmOutputStream.write("äüöÄÜÖ€€€".getBytes("iso-8859-1"));
+            mmOutputStream.write(0x1B);
+            mmOutputStream.write(0x74);
+            mmOutputStream.write(0x19);
+            mmOutputStream.write("äüöÄÜÖ€€€".getBytes("iso-8859-1"));
+            mmOutputStream.write(0x1B);
+            mmOutputStream.write(0x74);
+            mmOutputStream.write(0x20);
+            mmOutputStream.write("äüöÄÜÖ€€€".getBytes("iso-8859-1"));
+            mmOutputStream.write(0x1B);
+            mmOutputStream.write(0x74);
+            mmOutputStream.write(0x21);
+            mmOutputStream.write("äüöÄÜÖ€€€".getBytes("iso-8859-1"));
+            mmOutputStream.write(0x1B);
+            mmOutputStream.write(0x74);
+            mmOutputStream.write(0x22);
+            mmOutputStream.write("äüöÄÜÖ€€€".getBytes("iso-8859-1"));
+            mmOutputStream.write(0x1B);
+            mmOutputStream.write(0x74);
+            mmOutputStream.write(0x29);
+            mmOutputStream.write("äüöÄÜÖ€€€".getBytes("iso-8859-1"));
+            
+            // -------------------------
             // tell the user data were sent
             Log.d(LOG_TAG, "PRINT TEXT SEND -> " + msg);
             callbackContext.success("PRINT TEXT SEND");
