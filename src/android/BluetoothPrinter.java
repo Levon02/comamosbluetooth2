@@ -465,8 +465,7 @@ public class BluetoothPrinter extends CordovaPlugin {
             mmOutputStream.write(groesse_20);
             mmOutputStream.write(msg.getBytes());
             
-            byte[] groesse_1 = selFontSize(1);
-            byte[] groesse_11 = selFontSize(11);
+            mmOutputStream.write(groesse_1);
             mmOutputStream.write(groesse_11);
             mmOutputStream.write(msg.getBytes());
            
