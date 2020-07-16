@@ -445,24 +445,24 @@ public class BluetoothPrinter extends CordovaPlugin {
             // Select character code table (ESC t n) - n = 16(0x10) for WPC1252
             // Zeichenkodieren auf 8859-1 aktivieren -> Fuer Euro Zeichen brauch man UTF oder iso-8859-15
             //mmOutputStream.write(msg.getBytes("iso-8859-1")); 
-            byte[] groesse = selFontSize(1);
-            mmOutputStream.write(groesse);
+            byte[] groesse_1 = selFontSize(1);
+            mmOutputStream.write(groesse_1);
             mmOutputStream.write(msg.getBytes());
             
-            byte[] groesse = selFontSize(8);
-            mmOutputStream.write(groesse);
+            byte[] groesse_8 = selFontSize(8);
+            mmOutputStream.write(groesse_8);
             mmOutputStream.write(msg.getBytes());
             
-            byte[] groesse = selFontSize(10);
-            mmOutputStream.write(groesse);
+            byte[] groesse_10 = selFontSize(10);
+            mmOutputStream.write(groesse_10);
             mmOutputStream.write(msg.getBytes());
             
-            byte[] groesse = selFontSize(11);
-            mmOutputStream.write(groesse);
+            byte[] groesse_11 = selFontSize(11);
+            mmOutputStream.write(groesse_11);
             mmOutputStream.write(msg.getBytes());
             
-            byte[] groesse = selFontSize(20);
-            mmOutputStream.write(groesse);
+            byte[] groesse_20 = selFontSize(20);
+            mmOutputStream.write(groesse_20);
             mmOutputStream.write(msg.getBytes());
             
             mmOutputStream.write(msg.getBytes());
