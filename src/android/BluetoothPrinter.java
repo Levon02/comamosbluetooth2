@@ -443,7 +443,7 @@ public class BluetoothPrinter extends CordovaPlugin {
             // mmOutputStream.write(0x10);
             // -------------------------
             // Select character code table (ESC t n) - n = 16(0x10) for WPC1252
-            mmOutputStream.write(msg.getBytes());
+            mmOutputStream.write(msg.getBytes("ISO-8859-15"));
             // mmOutputStream.write(msg.getBytes("iso-8859-1"));
             // tell the user data were sent
             Log.d(LOG_TAG, "PRINT TEXT SEND -> " + msg);
