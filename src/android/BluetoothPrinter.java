@@ -473,7 +473,7 @@ public class BluetoothPrinter extends CordovaPlugin {
             mmOutputStream.write(art_B);
             mmOutputStream.write(msg.getBytes());
             
-            byte[] unterstrichen = FONT_B;UNDERL_ON
+            byte[] unterstrichen = FONT_B;
             mmOutputStream.write(unterstrichen);
             mmOutputStream.write(msg.getBytes());
             // -------------------------
