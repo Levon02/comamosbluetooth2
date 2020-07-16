@@ -434,7 +434,7 @@ public class BluetoothPrinter extends CordovaPlugin {
 
     boolean printText(CallbackContext callbackContext, String msg) throws IOException {
         try {
-             CANCEL CHINESE CHARACTER
+            //CANCEL CHINESE CHARACTER
             mmOutputStream.write(0x1C);
             mmOutputStream.write(0x2E);
             //
