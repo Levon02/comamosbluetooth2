@@ -446,8 +446,8 @@ public class BluetoothPrinter extends CordovaPlugin {
             // Zeichenkodieren auf 8859-1 aktivieren -> Fuer Euro Zeichen brauch man UTF oder iso-8859-15
             //mmOutputStream.write(msg.getBytes("iso-8859-1")); 
             //mmOutputStream.write(msg.getBytes("iso-8859-1"));
-            mmOutputStream.write(msg.getBytes("Cp585"));
-            mmOutputStream.write(msg.getBytes("CP585"));
+            //mmOutputStream.write(msg.getBytes("Cp585"));
+            //mmOutputStream.write(msg.getBytes("CP585"));
 
             mmOutputStream.write(msg.getBytes("iso-8859-1"));
             mmOutputStream.write(msg.getBytes("iso-8859-15"));
@@ -455,8 +455,8 @@ public class BluetoothPrinter extends CordovaPlugin {
             mmOutputStream.write(0x1B);
             mmOutputStream.write(0x74);
             mmOutputStream.write(0x10);
-            mmOutputStream.write(msg.getBytes("Cp585"));
-            mmOutputStream.write(msg.getBytes("CP585"));
+            //mmOutputStream.write(msg.getBytes("Cp585"));
+            //mmOutputStream.write(msg.getBytes("CP585"));
             mmOutputStream.write(msg.getBytes("iso-8859-1"));
             mmOutputStream.write(msg.getBytes("iso-8859-15"));
             mmOutputStream.write(msg.getBytes("UTF-8"));
@@ -468,8 +468,8 @@ public class BluetoothPrinter extends CordovaPlugin {
             mmOutputStream.write(msg.getBytes("iso-8859-1"));
             mmOutputStream.write(msg.getBytes("iso-8859-15"));
             mmOutputStream.write(msg.getBytes("UTF-8"));
-            mmOutputStream.write(msg.getBytes("Cp585"));
-            mmOutputStream.write(msg.getBytes("CP585"));
+            //mmOutputStream.write(msg.getBytes("Cp585"));
+            //mmOutputStream.write(msg.getBytes("CP585"));
             // -------------------------
             mmOutputStream.write(0x1B);
             mmOutputStream.write(0x74);
@@ -486,32 +486,32 @@ public class BluetoothPrinter extends CordovaPlugin {
             mmOutputStream.write(msg.getBytes("iso-8859-1"));
             mmOutputStream.write(msg.getBytes("iso-8859-15"));
             mmOutputStream.write(msg.getBytes("UTF-8"));
-            mmOutputStream.write(msg.getBytes("Cp585"));
-            mmOutputStream.write(msg.getBytes("CP585"));
+            //mmOutputStream.write(msg.getBytes("Cp585"));
+            //mmOutputStream.write(msg.getBytes("CP585"));
             mmOutputStream.write(0x1B);
             mmOutputStream.write(0x74);
             mmOutputStream.write(0x3);
             mmOutputStream.write(msg.getBytes("iso-8859-1"));
             mmOutputStream.write(msg.getBytes("iso-8859-15"));
             mmOutputStream.write(msg.getBytes("UTF-8"));
-            mmOutputStream.write(msg.getBytes("Cp585"));
-            mmOutputStream.write(msg.getBytes("CP585"));
+            //mmOutputStream.write(msg.getBytes("Cp585"));
+            //mmOutputStream.write(msg.getBytes("CP585"));
             mmOutputStream.write(0x1B);
             mmOutputStream.write(0x74);
             mmOutputStream.write(0x4);
             mmOutputStream.write(msg.getBytes("iso-8859-1"));
             mmOutputStream.write(msg.getBytes("iso-8859-15"));
             mmOutputStream.write(msg.getBytes("UTF-8"));
-            mmOutputStream.write(msg.getBytes("Cp585"));
-            mmOutputStream.write(msg.getBytes("CP585"));
+            //mmOutputStream.write(msg.getBytes("Cp585"));
+            //mmOutputStream.write(msg.getBytes("CP585"));
             mmOutputStream.write(0x1B);
             mmOutputStream.write(0x74);
             mmOutputStream.write(0x5);
             mmOutputStream.write(msg.getBytes("iso-8859-1"));
             mmOutputStream.write(msg.getBytes("iso-8859-15"));
             mmOutputStream.write(msg.getBytes("UTF-8"));
-            mmOutputStream.write(msg.getBytes("Cp585"));
-            mmOutputStream.write(msg.getBytes("CP585"));
+            //mmOutputStream.write(msg.getBytes("Cp585"));
+            //mmOutputStream.write(msg.getBytes("CP585"));
             mmOutputStream.write(0x1B);
             mmOutputStream.write(0x74);
             mmOutputStream.write(0x15);
