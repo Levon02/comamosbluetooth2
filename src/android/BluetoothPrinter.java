@@ -445,37 +445,18 @@ public class BluetoothPrinter extends CordovaPlugin {
             // Select character code table (ESC t n) - n = 16(0x10) for WPC1252
             // Zeichenkodieren auf 8859-1 aktivieren -> Fuer Euro Zeichen brauch man UTF oder iso-8859-15
             //mmOutputStream.write(msg.getBytes("iso-8859-1")); 
-            byte[] groesse_1 = selFontSize(1);
-            mmOutputStream.write(groesse_1);
+            byte[] normal = selFontSize(0);
+            byte[] klein = selFontSize(1);
+            byte[] dick = selFontSize(8);
+            byte[] hoch = selFontSize(10);
+            byte[] hoch_eng = selFontSize(11);
+            byte[] breit = selFontSize(20);
+
+       
+            mmOutputStream.write(klein);
             mmOutputStream.write(msg.getBytes());
             
-            byte[] groesse_8 = selFontSize(8);
-            mmOutputStream.write(groesse_8);
-            mmOutputStream.write(msg.getBytes());
-            
-            byte[] groesse_10 = selFontSize(10);
-            mmOutputStream.write(groesse_10);
-            mmOutputStream.write(msg.getBytes());
-            
-            byte[] groesse_11 = selFontSize(11);
-            mmOutputStream.write(groesse_11);
-            mmOutputStream.write(msg.getBytes());
-            
-            byte[] groesse_20 = selFontSize(20);
-            mmOutputStream.write(groesse_20);
-            mmOutputStream.write(msg.getBytes());
-            
-            mmOutputStream.write(groesse_1);
-            mmOutputStream.write(groesse_11);
-            mmOutputStream.write(msg.getBytes());
-            
-            byte[] art_B = FONT_B;
-            mmOutputStream.write(art_B);
-            mmOutputStream.write(msg.getBytes());
-            
-            byte[] unterstrichen = FONT_B;
-            mmOutputStream.write(unterstrichen);
-            mmOutputStream.write(msg.getBytes());
+
             // -------------------------
             // tell the user data were sent
             Log.d(LOG_TAG, "PRINT TEXT SEND -> " + msg);
