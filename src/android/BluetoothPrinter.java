@@ -451,7 +451,10 @@ public class BluetoothPrinter extends CordovaPlugin {
             byte[] hoch = selFontSize(10);
             byte[] hoch_eng = selFontSize(11);
             byte[] breit = selFontSize(20);
-
+            //align
+            byte[] mitte = ESC_ALIGN_CENTER;
+            byte[] links = ESC_ALIGN_LEFT;
+            byte[] rechts = ESC_ALIGN_RIGHT;
        
             mmOutputStream.write(klein);
             mmOutputStream.write(msg.getBytes());
