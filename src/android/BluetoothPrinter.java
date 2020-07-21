@@ -108,7 +108,7 @@ public class BluetoothPrinter extends CordovaPlugin {
             try {
                 String msg = args.getString(0);
                 String msg_2 = args.getString(1);
-                printText(callbackContext, msg_2);
+                printText(callbackContext, msg, msg_2);
             } catch (IOException e) {
                 Log.e(LOG_TAG, e.getMessage());
                 e.printStackTrace();
