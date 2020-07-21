@@ -464,15 +464,13 @@ public class BluetoothPrinter extends CordovaPlugin {
                 if (parts[i].contains("<normal>")) {
                     text_zum_drucken = parts[i].replaceAll("<normal>","");
                     mmOutputStream.write(normal);
-                    mmOutputStream.write(text_zum_drucken.getBytes());};   
+                    mmOutputStream.write(text_zum_drucken.getBytes());
                 }else if (parts[i].contains("<klein>")) {
                     text_zum_drucken = parts[i].replaceAll("<klein>","");
                     mmOutputStream.write(klein);
-                    mmOutputStream.write(text_zum_drucken.getBytes());};   
-                };
-
-            
-            
+                    mmOutputStream.write(text_zum_drucken.getBytes());
+                };   
+            };
 
             // -------------------------
             // tell the user data were sent
