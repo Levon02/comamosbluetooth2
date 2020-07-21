@@ -107,7 +107,8 @@ public class BluetoothPrinter extends CordovaPlugin {
         } else if (action.equals("printText")) {
             try {
                 String msg = args.getString(0);
-                printText(callbackContext, msg);
+                String msg_2 = args.getString(1);
+                printText(callbackContext, msg_2);
             } catch (IOException e) {
                 Log.e(LOG_TAG, e.getMessage());
                 e.printStackTrace();
@@ -432,7 +433,7 @@ public class BluetoothPrinter extends CordovaPlugin {
 
     }
 
-    boolean printText(CallbackContext callbackContext, String msg) throws IOException {
+    boolean printText(CallbackContext callbackContext, String msg, String msg_2) throws IOException {
         try {
             //Chinese Zeichen deaktivieren
             //mmOutputStream.write(0x1C);
