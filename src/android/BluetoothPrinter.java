@@ -456,7 +456,14 @@ public class BluetoothPrinter extends CordovaPlugin {
             byte[] links = ESC_ALIGN_LEFT;
             byte[] rechts = ESC_ALIGN_RIGHT;
        
-            mmOutputStream.write(msg.getBytes());
+            String[] parts = msg.split("<Markierung>");
+            int laenge = parts.length
+            for (int i = 0; i < laenge; i++) {
+                mmOutputStream.write(parts[i].getBytes());
+                };
+
+            
+            
 
             // -------------------------
             // tell the user data were sent
