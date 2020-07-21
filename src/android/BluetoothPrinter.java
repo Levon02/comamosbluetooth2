@@ -459,7 +459,10 @@ public class BluetoothPrinter extends CordovaPlugin {
             String[] parts = msg.split("<Markierung>");
             int laenge = parts.length;
             for (int i = 0; i < laenge; i++) {
-                mmOutputStream.write(parts[i].getBytes());
+                if (parts[i].contains("<normal>")) {
+                    String msg = parts[i].replaceAll("<normal>","");
+                    mmOutputStream.write(normal);
+                    mmOutputStream.write(msg.getBytes());   
                 };
 
             
