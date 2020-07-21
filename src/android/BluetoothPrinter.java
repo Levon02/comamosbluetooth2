@@ -455,12 +455,14 @@ public class BluetoothPrinter extends CordovaPlugin {
             byte[] mitte = ESC_ALIGN_CENTER;
             byte[] links = ESC_ALIGN_LEFT;
             byte[] rechts = ESC_ALIGN_RIGHT;
+            
             String text_zum_drucken = "";
             
        
             String[] parts = msg.split("<Markierung>");
             int laenge = parts.length;
             for (int i = 0; i < laenge; i++) {
+                // Größe einstellen anhand von <Markierung>
                 if (parts[i].contains("<normal>")) {
                     text_zum_drucken = parts[i].replaceAll("<normal>","");
                     mmOutputStream.write(normal);
@@ -469,7 +471,29 @@ public class BluetoothPrinter extends CordovaPlugin {
                     text_zum_drucken = parts[i].replaceAll("<klein>","");
                     mmOutputStream.write(klein);
                     mmOutputStream.write(text_zum_drucken.getBytes());
-                };   
+                }else if (parts[i].contains("<dick>")) {
+                    text_zum_drucken = parts[i].replaceAll("<dick>","");
+                    mmOutputStream.write(dick);
+                    mmOutputStream.write(text_zum_drucken.getBytes());
+                }else if (parts[i].contains("<hoch>")) {
+                    text_zum_drucken = parts[i].replaceAll("<hoch>","");
+                    mmOutputStream.write(hoch);
+                    mmOutputStream.write(text_zum_drucken.getBytes());
+                }else if (parts[i].contains("<hoch_eng>")) {
+                    text_zum_drucken = parts[i].replaceAll("<hoch_eng>","");
+                    mmOutputStream.write(hoch_eng);
+                    mmOutputStream.write(text_zum_drucken.getBytes());
+                }else if (parts[i].contains("<breit>")) {
+                    text_zum_drucken = parts[i].replaceAll("<breit>","");
+                    mmOutputStream.write(breit);
+                    mmOutputStream.write(text_zum_drucken.getBytes());
+                }else {
+                    mmOutputStream.write(normal);
+                    mmOutputStream.write(text_zum_drucken.getBytes());
+                };  
+                
+                // Am Ende auf normale Schrift stellen
+                if (i == laenge-1) {mmOutputStream.write(normal);};
             };
 
             // -------------------------
